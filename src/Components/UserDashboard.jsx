@@ -88,7 +88,6 @@ function OffCanvasExample({ name, ...props }) {
         onHide={handleClose}
         {...props}
         className="bg-dark text-light"
-        style={{ width: "23vw" }}
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="bg-dark text-light">
@@ -164,7 +163,7 @@ function X() {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="m-4">
+    <div>
       {options.map((props, idx) => (
         <OffCanvasExample key={idx} {...props} />
       ))}
@@ -225,18 +224,18 @@ function X() {
   );
 }
 
-// function MainContent() {
-//   const [showOffcanvas, setShowOffcanvas] = useState(false);
+function MainContent() {
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-//   return (
-//     <div className={`main-content ${showOffcanvas} ? "offcanvas-opened" : ""}`}>
-//       {/* Your main content goes here */}
-//       <h1>Main Content</h1>
-//       <p>Your content here...</p>
-//       {/* ... */}
-//     </div>
-//   );
-// }
+  return (
+    <div className={`main-content ${showOffcanvas} ? "offcanvas-opened" : ""}`}>
+      {/* Your main content goes here */}
+      <h1>Main Content</h1>
+      <p>Your content here...</p>
+      {/* ... */}
+    </div>
+  );
+}
 
 function UserDashboard({ isAuth }) {
   return (
